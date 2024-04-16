@@ -35,8 +35,8 @@ gradlePlugin {
             tags = listOf("plantuml", "puml", "svg")
             website = "https://github.com/kkocel/yapgp"
             vcsUrl = "https://github.com/kkocel/yapgp.git"
-            description = "A plugin to convert PlantUML .puml files to one of the supported output formats. " +
-                "It sends .puml file to PlantUML server and retrieves the result."
+            description = "Converts PlantUML .puml files to one of the supported output formats - svg, png, txt. " +
+                "It sends the .puml file to the PlantUML server and saves the result."
             implementationClass = "tech.kocel.yapgp.PlantumlGradlePlugin"
         }
     }
