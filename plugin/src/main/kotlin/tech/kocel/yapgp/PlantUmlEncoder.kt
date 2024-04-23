@@ -100,6 +100,6 @@ class PlantUmlEncoder {
                 BaseNCodec.DECODING_POLICY_DEFAULT,
             ).encode(deflated)
 
-        return base64EncodedBytes.toString()
+        return base64EncodedBytes.toString(Charsets.UTF_8)
     }
 }
