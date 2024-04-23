@@ -15,13 +15,19 @@ class DiagramDownloader {
         fileFormat: FileFormat,
         outputFileName: File,
     ) {
-        val url = URL("$PLANTUML_SERVER${fileFormat.name.lowercase()}/$diagramContent}")
-        url.openStream().use {
+        url(diagramContent, fileFormat).openStream().use {
             Channels.newChannel(it).use { rbc ->
                 FileOutputStream(outputFileName).use { fos ->
                     fos.channel.transferFrom(rbc, 0, Long.MAX_VALUE)
                 }
             }
         }
+    }
+
+    fun url(
+        diagramContent: String,
+        fileFormat: FileFormat,
+    ): URL {
+        return URL("$PLANTUML_SERVER${fileFormat.name.lowercase()}/~1$diagramContent")
     }
 }
