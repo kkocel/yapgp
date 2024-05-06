@@ -20,7 +20,7 @@ repositories {
 
 dependencies {
     implementation(gradleApi())
-    implementation("commons-codec:commons-codec:1.16.1")
+    implementation("commons-codec:commons-codec:1.17.0")
 
     val kotestVersion = "5.8.1"
     testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")

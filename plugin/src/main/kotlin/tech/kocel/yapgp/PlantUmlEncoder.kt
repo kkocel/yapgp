@@ -1,5 +1,6 @@
 package tech.kocel.yapgp
 
+import org.apache.commons.codec.binary.Base64
 import java.io.ByteArrayOutputStream
 import java.nio.charset.StandardCharsets
 import java.util.zip.Deflater
@@ -93,12 +94,11 @@ class PlantUmlEncoder {
                 .toByteArray()
 
         val base64EncodedBytes =
-            Base64(
-                0,
-                null,
-                encodeTable,
-                BaseNCodec.DECODING_POLICY_DEFAULT,
-            ).encode(deflated)
+            Base64
+                .builder()
+                .setEncodeTable(*encodeTable)
+                .get()
+                .encode(deflated)
 
         return base64EncodedBytes.toString(Charsets.UTF_8)
     }
