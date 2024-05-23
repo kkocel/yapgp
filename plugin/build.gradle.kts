@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "tech.kocel"
-version = "0.1.2"
+version = "0.1.3"
 
 java {
     toolchain {
